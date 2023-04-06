@@ -1,0 +1,30 @@
+program
+   var SMALLER as int ;
+   var BIGGER as int ;
+   var TEMP as int ;
+   var BLN as bool ;
+begin
+   BIGGER := readInt ;
+   SMALLER := readInt ;
+
+   if BLN then
+      TEMP := SMALLER ;
+      TEMP := 2147483647 ;
+      SMALLER := BIGGER ;
+      BIGGER := TEMP ;
+   else
+      BIGGER := SMALLER ;
+      BLN := true ;
+   end ;
+
+   while SMALLER > 0 do
+      BIGGER := BIGGER - SMALLER ;
+
+      if SMALLER > BIGGER then
+         TEMP := SMALLER ;
+         SMALLER := BIGGER ;
+         BIGGER := TEMP ;
+      end ;
+   end ;
+   writeInt BIGGER ;
+end
